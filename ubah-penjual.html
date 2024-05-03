@@ -35,7 +35,7 @@
       <button type="submit" class="btn btn-primary" id="tombol-ubah">Ubah</button>
     </form>
 
-    <a class="mt-1" href="index.html">Lihat Daftar Pembeli</a>
+    <a class="mt-1" href="index.html">Lihat Daftar Penjual</a>
 
     <script type="module">
       import { ambilPembeli, ubahPembeli } from './main.js';
@@ -44,6 +44,7 @@
       let elemenNamaPembeli = document.getElementById('input-nama');
       let elemenAlamat = document.getElementById('input-alamat');
       let elemenNoTlpn = document.getElementById('input-noTlpn');
+      let elemenemail = document.getElementById('input-email');
       const queryString = window.location.search
       const parameterURL = new URLSearchParams(queryString);
       const docId = parameterURL.get('docId')
