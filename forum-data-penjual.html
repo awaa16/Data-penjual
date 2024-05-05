@@ -26,12 +26,12 @@
       <input type="text" class="form-control" id="input-alamat">
     </div>
     <div class="mb-3">
-      <label class="form-label">email</label>
-      <input type="text" class="form-control" id="input-noTlpn">
+      <label class="form-label">gmail</label>
+      <input type="text" class="form-control" id="input-email">
     </div>
       <div class="mb-3">
         <label class="form-label">no.Tlpn</label>
-        <input type="text" class="form-control" id="input-email">
+        <input type="text" class="form-control" id="input-noTlpn">
       </div>
     <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
   </form>
@@ -39,17 +39,18 @@
   <a href="index.html">Daftar Penjual </a>
 
   <script type="module">
-    import { tambahPembeli } from './main.js';
+    import { tambahPenjual } from './main.js';
 
     let tombolTambah = document.getElementById('tombol-tambah');
     let elemenNamaPembeli = document.getElementById('input-nama');
     let elemenAlamat = document.getElementById('input-alamat');
+    let elemengmail= document.getElementById('input-email');
     let elemenNoTlpn = document.getElementById('input-noTlpn');
 
     tombolTambah.addEventListener('click', async function(e) {
       e.preventDefault();
-      await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value
-        elemenemail.value);
+      await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value,
+        elemengmail.value);
       window.location.href = 'index.html'
     })
   </script>

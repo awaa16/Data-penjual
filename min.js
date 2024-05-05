@@ -36,7 +36,7 @@ export async function ambilDaftarPenjual() {
       id: dok.id,
       nama: dok.data().nama,
       alamat: dok.data().alamat,
-      email : dok.data().alamat,
+      gmail : dok.data().alamat,
       noTlpn: dok.data().noTlpn,
     });
   });
@@ -48,11 +48,12 @@ export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahPembeli(nama, alamat, noTlpn) {
+export async function tambahPenjual(nama, alamat, gmail ,noTlpn) {
   try {
-    const dokRef = await addDoc(collection(db, 'pembeli'), {
+    const dokRef = await addDoc(collection(db, 'penjual'), {
       nama: nama,
       alamat: alamat,
+      gmail: gmail,
       noTlpn: noTlpn
     });
     console.log('berhasil menembah produk ' + dokRef.id);
@@ -62,5 +63,20 @@ export async function tambahPembeli(nama, alamat, noTlpn) {
 }
 
 export async function hapusPembeli(docId) {
-  await deleteDoc(doc(db, "pembeli", docId));
+  await deleteDoc(doc(db, "penjual", docId));
+}
+export async function ubahPembeli(docId, nama, alamat, noTlpn) {
+  await updateDoc(doc(db, "pembeli", docId), {
+    nama: nama,
+    alamat: alamat,
+    gmail: gmail,
+    noTlpn: noTlpn
+  });
+}
+
+export async function ambilPenjual(docId) {
+  const docRef = await doc(db, "penjual", docId);
+  const docSnap = await getDoc(docRef);
+
+  return await docSnap.data();
 }
