@@ -42,17 +42,17 @@
     import { tambahPenjual } from './main.js';
 
     let tombolTambah = document.getElementById('tombol-tambah');
-    let elemenNamaPembeli = document.getElementById('input-nama');
+    let elemenNamaPenjual= document.getElementById('input-nama');
     let elemenAlamat = document.getElementById('input-alamat');
     let elemengmail= document.getElementById('input-gmail');
     let elemenNoTlpn = document.getElementById('input-noTlpn');
 
     tombolTambah.addEventListener('click', async function(e) {
       e.preventDefault();
-      await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value,
+      await tambahpenjual(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value,
         elemengmail.value);
       window.location.href = 'index.html'
-    })
+    }).
   </script>
 
 </body>
